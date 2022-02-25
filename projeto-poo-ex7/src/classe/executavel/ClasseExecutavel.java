@@ -30,24 +30,31 @@ public class ClasseExecutavel {
         for(Compromisso compromisso: agenda.getCompromissos())
             System.out.println(compromisso);
         
+        
         int rep = 0;
         do {
-        	
         	rep = JOptionPane.showConfirmDialog(null, "Deseja remover um compromisso ? ");
-        	if(rep == 0) {
+        	if(agenda.sizeList()) {
         		int dia = Integer.parseInt(JOptionPane.showInputDialog("Informe o dia: "));
-            	int mes = Integer.parseInt(JOptionPane.showInputDialog("Informe o mes: "));
-            	System.out.println(agenda.delCompromissoDiaMes(dia, mes));
+	           	int mes = Integer.parseInt(JOptionPane.showInputDialog("Informe o mes: "));
+	            System.out.println(agenda.delCompromissoDiaMes(dia, mes));
+        	
+        	}else {
+        		JOptionPane.showMessageDialog(null, "Lista Vazia");
+        		rep = 1;
         	}
         	
         }while(rep == 0);
-        
 
         System.out.println();
         System.out.println(agenda);
         System.out.println("--- Lista de compromissos ---");
-        for(Compromisso compromisso: agenda.getCompromissos())
-            System.out.println(compromisso);
+        if(agenda.getCompromissos().size() != 0) {
+	        for(Compromisso compromisso: agenda.getCompromissos())
+	            System.out.println(compromisso);
+        }else {
+    		System.out.println("A lista está vazia!!");
+    	}
         
 
 	}

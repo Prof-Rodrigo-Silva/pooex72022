@@ -41,13 +41,24 @@ public class Agenda {
         this.compromissos.remove(compromisso);
     }
     
-    public int delCompromissoDiaMes(int dia, int mes){        
-        for(Compromisso c: this.compromissos)
-            if(c.getDia() == dia && c.getMes() == mes){
-                this.compromissos.remove(c);
-                return compromissos.size();
-            }
-        return compromissos.size();
+    public String delCompromissoDiaMes(int dia, int mes){
+	        for(Compromisso c: this.compromissos)
+	        	if(sizeList()) {
+	        		if(c.getDia() == dia && c.getMes() == mes){
+	        			this.compromissos.remove(c);
+	                
+	        		}
+	        		return "Removeu!";
+	            }       
+    	return "Lista vazia!";
+    }
+    
+    public boolean sizeList() {
+    	if(!compromissos.isEmpty()) {
+    		return true;
+    	}else {
+    		return false;
+    	}
     }
     
     

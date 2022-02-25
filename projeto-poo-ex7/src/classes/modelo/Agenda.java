@@ -7,10 +7,16 @@ public class Agenda {
 	
 	private String usuario;
     private int ano;
-    private List<Compromisso> compromissos = new ArrayList<Compromisso>();
+    private List<Compromisso> compromissos;
     
-    public void addCompromisso(Compromisso compromisso){
-        this.compromissos.add(compromisso);
+    public Agenda() {
+        this.compromissos = new ArrayList<>();        
+    }
+    
+    public Agenda(String usuario, int ano, List<Compromisso> compromissos) {
+        this.usuario = usuario;
+        this.ano = ano;
+        this.compromissos = compromissos;
     }
     
     public String getUsuario() {
@@ -36,6 +42,10 @@ public class Agenda {
 	public void setCompromissos(List<Compromisso> compromissos) {
 		this.compromissos = compromissos;
 	}
+	
+	public void addCompromisso(Compromisso compromisso){
+        this.compromissos.add(compromisso);
+    }
 
 	public void delCompromisso(Compromisso compromisso){
         this.compromissos.remove(compromisso);

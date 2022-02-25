@@ -9,6 +9,12 @@ public class Compromisso {
     public Compromisso() {
 
     }
+    
+    public Compromisso(int dia, int mes, String descricao) {
+        this.dia = dia;
+        this.mes = mes;
+        this.descricao = descricao;
+    }
 
     public int getDia() {
         return dia;
